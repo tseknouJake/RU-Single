@@ -5,6 +5,12 @@ const Header = () => {
   return (
     <header>
       <h1>NAVBAR </h1>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+        </ul>
+      </nav>
     </header>
   );
 };
