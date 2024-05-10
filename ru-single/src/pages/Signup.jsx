@@ -1,32 +1,64 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your sign-up logic here
+
+    try {
+      // Send the form data to the backend
+      const response = await axios.post('/api/signup', formData);
+      console.log('Signup successful:', response.data);
+    } catch (error) {
+      console.error('Signup error:', error.response?.data || error.message);
+    }
   };
 
   return (
     <div>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input type="email" value={email} onChange={handleEmailChange} />
-
-        <label>Password:</label>
-        <input type="password" value={password} onChange={handlePasswordChange} />
-
+        <div>
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <button type="submit">Sign Up</button>
       </form>
     </div>
