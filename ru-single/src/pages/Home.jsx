@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import './nav.css';
 
 const About = () => {
   return (
@@ -12,4 +13,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About; 
