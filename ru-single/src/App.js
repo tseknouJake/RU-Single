@@ -4,6 +4,7 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import About from './pages/About';
 import './App.css';
+import ServerTest from './pages/ServerTest';
 
 function App() {
   return (
