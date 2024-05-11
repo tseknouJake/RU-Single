@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
   });
@@ -18,7 +18,7 @@ const Signup = () => {
 
     try {
       // Send the form data to the backend
-      const response = await axios.post('/api/signup', formData);
+      const response = await axios.post('/signup', formData);
       console.log('Signup successful:', response.data);
     } catch (error) {
       console.error('Signup error:', error.response?.data || error.message);
@@ -30,11 +30,11 @@ const Signup = () => {
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Username</label>
+          <label>Name</label>
           <input
             type="text"
-            name="username"
-            value={formData.username}
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             required
           />
