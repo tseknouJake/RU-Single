@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
-const uri = "mongodb+srv://OronPaz:" + process.env.MongoDBPassword +"@ru-single.63vvotl.mongodb.net/?retryWrites=true&w=majority&appName=ru-single";
+const uri = "mongodb+srv://OronPaz:" + process.env.MongoDBPassword +"@ru-single.63vvotl.mongodb.net/Users?retryWrites=true&w=majority&appName=ru-single";
 
 app.listen(5050, () => {
   console.log('Server is running on port 5050');
