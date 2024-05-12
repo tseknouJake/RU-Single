@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './styling/signupANDLogin.css';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Signup = () => {
 
   return (
     <div>
-      <h2>Sign Up</h2>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name</label>
