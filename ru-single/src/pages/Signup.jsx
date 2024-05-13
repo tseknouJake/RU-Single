@@ -23,7 +23,7 @@ const Signup = () => {
     try {
       // Send the form data to the backend
       const response = await axios.post('/signup', formData);
-      console.log('Signup successful:', response.data);
+      console.log('Valid Inputs redirecting to preferences page:', response.data);
       // Navigate to the login page
       navigate('/signup/preferences');
       // Show a success alert
