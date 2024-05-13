@@ -20,7 +20,9 @@ const SignupAdditional = () => {
       // Retrieve basic information from local storage or state
       const basicInfo = JSON.parse(localStorage.getItem('basicInfo'));
       const userData = { ...basicInfo, ...formData };
-      await axios.post('/signup/preferences', userData);
+      await axios.post('/signup/preferences', userData).then((response) => {
+        console.log('Signup successful:', response.data);
+      });
       navigate('/login'); // Redirect to login page after signup
     } catch (error) {
       console.error('Error submitting additional details:', error);
