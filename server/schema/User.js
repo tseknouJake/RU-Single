@@ -14,6 +14,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  gender:{
+    type: String,
+    required: true
+  },
+  genderPreference:{
+    type: String,
+    required: true
+  },
   createdAt: {
     type: Date,
     default: Date.now
