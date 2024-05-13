@@ -25,9 +25,8 @@ const Signup = () => {
       const response = await axios.post('/signup', formData);
       console.log('Signup successful:', response.data);
       // Navigate to the login page
-      navigate('/login');
+      navigate('/signup/preferences');
       // Show a success alert
-      alert('Signup successful');
     } catch (error) {
       console.error('Signup error:', error.response?.data || error.message);
       // Refresh the page
